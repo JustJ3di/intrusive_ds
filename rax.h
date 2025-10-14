@@ -1,7 +1,7 @@
-#include <bits/stdc++.h>
-using namespace std;
+#ifndef RAX
+#define RAX
 
-using val = std::variant<int, char, double, string>;
 
+#endif
 
 
