@@ -1,32 +1,28 @@
 #ifndef LIST
 #define LIST
-#include <stdarg.h>
+#include "utils.h"
 
-#define  NULL ((void *)0)
-
-typedef enum{false ,true}bool;
-
-typedef struct node {
+typedef struct lnode {
     
-    struct node *next;
-    struct node *prev;
+    struct lnode *next;
+    struct lnode *prev;
 
-}Node;
+}LNode;
 
 
 typedef struct list{
-    Node *tail;
-    Node *head;
+    LNode *tail;
+    LNode *head;
 }List;
 
 
 void init_list(List *);
 
-void push_front(List *,Node *);
-void push_back(List *, Node *);
-Node *pop_back(List *);
-Node *pop_front(List *);
-bool erase(List *,Node *);
+void push_front(List *,LNode *);
+void push_back(List *, LNode *);
+LNode *pop_back(List *);
+LNode *pop_front(List *);
+bool erase(List *,LNode *);
 
 
 

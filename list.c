@@ -9,7 +9,7 @@ void init_list(List *list){
 }
 
 
-void push_back(List *list, Node *new){
+void push_back(List *list, LNode *new){
     if(!erase(list, new)){
         if(list->tail){
             list->tail->next = new;
@@ -25,7 +25,7 @@ void push_back(List *list, Node *new){
     }
 }
 
-void push_front(List *list, Node *new){
+void push_front(List *list, LNode *new){
 
     if(!erase(list,new)){
         if(list->head){
@@ -43,13 +43,13 @@ void push_front(List *list, Node *new){
     }
 }
 
-Node *pop_back(List *list){
+LNode *pop_back(List *list){
 
-    //No node
+    //No LNode
     if(!list->tail)
         return NULL;
 
-    Node *pop=list->tail;
+    LNode *pop=list->tail;
     list->tail = pop->prev;
     //2 ore more node
     if(list->tail){
@@ -63,13 +63,13 @@ Node *pop_back(List *list){
     return pop;
 }
 
-Node *pop_front(List *list){
+LNode *pop_front(List *list){
 
-    //No node
+    //No LNode
     if(!list->head)
         return NULL;
 
-    Node *pop=list->head;
+    LNode *pop=list->head;
     list->head = pop->next;
     //More node
     if(list->head){
@@ -84,7 +84,7 @@ Node *pop_front(List *list){
 }
 
 //if node is in the list return true; else return false;
-bool erase(List *list, Node *node){
+bool erase(List *list, LNode *node){
 
     if(!node)
         return false;
