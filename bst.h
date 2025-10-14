@@ -25,7 +25,7 @@ void bstinsert(Bstree *, BSTnode *);
 void bstremove(Bstree *, BSTnode *);
 BSTnode *btreemin(BSTnode *);
 BSTnode *btreemax(BSTnode *);
-
+bool search(Bstree *T, BSTnode *);
 
 
 

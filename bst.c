@@ -97,3 +97,18 @@ void bstremove(Bstree *T, BSTnode *z){
     }
     
 }
+
+bool search(Bstree *T, BSTnode *node){
+
+    BSTnode *x = T->root;
+    while(x && node->KEY != x->KEY){
+        if (node->KEY < x->KEY)
+            x = x->left;
+        else if(node->KEY > x->KEY)
+            x = x->right;
+        else
+            return true;
+    }
+
+    return false;
+}
