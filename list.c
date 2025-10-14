@@ -103,14 +103,3 @@ bool erase(List *list, Node *node){
 
 }
 
-
-void insert_before(List *list, Node *before,Node *node){
-
-    before->prev = node;
-    node->next = before;
-
-
-}
-void insert_after(List *list, Node *after, Node *node){
-
-}
