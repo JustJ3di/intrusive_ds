@@ -10,37 +10,36 @@ void init_list(List *list){
 
 
 void push_back(List *list, LNode *new){
-    if(!erase(list, new)){
-        if(list->tail){
-            list->tail->next = new;
-            new->next = NULL;
-            new->prev = list->tail;
-            list->tail = new;
-        }else{
-            list->tail = new;
-            list->head = new;
-            new->next = NULL;
-            new->prev = NULL;
-        }
+    
+    if(list->tail){
+        list->tail->next = new;
+        new->next = NULL;
+        new->prev = list->tail;
+        list->tail = new;
+    }else{
+        list->tail = new;
+        list->head = new;
+        new->next = NULL;
+        new->prev = NULL;
     }
+    
 }
 
 void push_front(List *list, LNode *new){
 
-    if(!erase(list,new)){
-        if(list->head){
-            list->head->prev = new;
-            new->prev = NULL;
-            new->next = list->head;
-            list->head = new;
+    if(list->head){
+        list->head->prev = new;
+        new->prev = NULL;
+        new->next = list->head;
+        list->head = new;
 
-        }else{
-            list->head = new;
-            list->tail = new;
-            new->next = NULL;
-            new->prev = NULL;
-        }
+    }else{
+        list->head = new;
+        list->tail = new;
+        new->next = NULL;
+        new->prev = NULL;
     }
+    
 }
 
 LNode *pop_back(List *list){

@@ -17,7 +17,7 @@ typedef struct slist
 void init_slist(Slist *);
 void push_slist(Slist *,SNode *);
 SNode *pop_slist(Slist *);
-void slist_revere(Slist *);
+void slist_reverse(Slist *);
 bool search(Slist *,SNode *);
 
 

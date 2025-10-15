@@ -26,11 +26,29 @@ SNode *pop_slist(Slist *list){
     return temp;
 
 }
-/*
-void slist_revere(){
 
+void slist_reverse(Slist *list){
+
+    SNode *p = NULL, *c = list->head,*n;
+    while(c)
+    {
+        n = c->next;
+        c->next = p;
+        p = c;
+        c = n;
+    }
+    list->head = p;
 }
-bool search(){
 
-}*/
+bool search(Slist *list,SNode *y){
+    
+    SNode *x = list->head;
+    while (x)
+    {
+        if(x==y)return true;
+        x = x->next;
+    }
+    return false;
+    
+}
 
